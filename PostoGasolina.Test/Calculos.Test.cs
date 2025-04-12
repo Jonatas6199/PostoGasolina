@@ -16,7 +16,6 @@ namespace PostoGasolina.Test
             double litros = 20;
             Gasolina gasolina = new Gasolina(Enumeradores.PurezaEnum.Alta, "40W");
             double resultado = gasolina.CalculoPrecoGasolina(litros);
-              ;
             Assert.Equal(140, resultado);
         }
 
