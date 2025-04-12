@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostoGasolina", "PostoGasolina\PostoGasolina.csproj", "{5A97371F-1276-4826-B795-4DE37692A1BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostoGasolina.Test", "PostoGasolina.Test\PostoGasolina.Test.csproj", "{7EB0DFA2-8864-4A38-A567-0D469AECC8EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A97371F-1276-4826-B795-4DE37692A1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A97371F-1276-4826-B795-4DE37692A1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A97371F-1276-4826-B795-4DE37692A1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A97371F-1276-4826-B795-4DE37692A1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB0DFA2-8864-4A38-A567-0D469AECC8EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB0DFA2-8864-4A38-A567-0D469AECC8EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB0DFA2-8864-4A38-A567-0D469AECC8EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB0DFA2-8864-4A38-A567-0D469AECC8EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CA09237-35AD-4E48-BFAC-868BA235BA92}
+	EndGlobalSection
+EndGlobal
