@@ -14,9 +14,7 @@ namespace PostoGasolina.Entidades
         {
             Pureza = pureza;
             Viscosidade = viscosidade;
-        }
-        public double CalculoPrecoGasolina(double litros) 
-        {
+
             switch (Pureza)
             {
                 case PurezaEnum.Alta:
@@ -29,6 +27,9 @@ namespace PostoGasolina.Entidades
                     PrecoLitro = 5.79;
                     break;
             }
+        }
+        public double CalculoPrecoGasolina(double litros) 
+        {
             return Calculos.CalculaCombustivelBasico(litros, PrecoLitro);
         }
 
