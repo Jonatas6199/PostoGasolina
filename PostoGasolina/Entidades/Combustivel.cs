@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 namespace PostoGasolina.Entidades
 {
     //Classe abstrata, é uma classe base que pode ser herdada
+    //E nao pode ser instanciada
+    //Logo nao pode ser um objeto
     public abstract class Combustivel
     {
         public double PrecoLitro { get; set; }

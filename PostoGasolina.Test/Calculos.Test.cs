@@ -11,16 +11,16 @@ namespace PostoGasolina.Test
 {
     public class TestarCalculosTeste
     {
-        [Fact(Skip ="")]
+        [Fact(Skip = "N/A")]
         public void TestarPrecoGasolina_True_Fact()
         {
             double litros = 20;
-            Gasolina gasolina = new Gasolina(Enumeradores.PurezaEnum.Alta, "40W");
+            Gasolina gasolina = new Gasolina(PurezaEnum.Alta, "40W");
             double resultado = gasolina.CalculoPrecoGasolina(litros);
             Assert.Equal(140, resultado);
         }
 
-        [Fact(Skip = "")]
+        [Fact(Skip = "N/A")]
         public void TestarPrecoEtanol_True_Fact()
         {
             double litros = 20;
@@ -31,7 +31,7 @@ namespace PostoGasolina.Test
             Assert.Equal(80, resultado);
         }
 
-        [Fact(Skip = "")]
+        [Fact(Skip = "N/A")]
         public void TestarPrecoDiesel_True_Fact()
         {
             double litros = 20;
@@ -41,6 +41,30 @@ namespace PostoGasolina.Test
                 Calculos.CalculaCombustivelBasico(litros, diesel.PrecoLitro);
 
             Assert.Equal(160, resultado);
+        }
+
+        [Fact]
+        public void TestarGasolinaCreditoAVista_True_Fact()
+        {
+            double litros = 20;
+            Gasolina gasolina = new Gasolina(PurezaEnum.Alta, "40W");
+            double resultado = 
+                Calculos.CalculaCombustivelPorFormaDePagamento
+                (PagamentosEnum.CreditoAVista,litros, gasolina.PrecoLitro);
+
+            Assert.Equal(175.14, resultado);
+        }
+
+        [Fact]
+        public void TestarGasolinaCreditoParcelado_True_Fact()
+        {
+            double litros = 20;
+            Gasolina gasolina = new Gasolina(PurezaEnum.Alta, "40W");
+            double resultado =
+                Calculos.CalculaCombustivelPorFormaDePagamento
+                (PagamentosEnum.CreditoParcelado, litros, gasolina.PrecoLitro,5);
+
+            Assert.Equal(256.64, resultado);
         }
     }
 }
