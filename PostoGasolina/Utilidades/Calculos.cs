@@ -27,7 +27,10 @@ namespace PostoGasolina.Utilidades
                     taxa = 1.05;
                     break;
                 case PagamentosEnum.CreditoParcelado:
-                    taxa = CalculaTaxaParcelas(parcelas);
+                    if (parcelas == 1)
+                        taxa = 1.05;
+                    else
+                        taxa = CalculaTaxaParcelas(parcelas);
                     break;
                 case PagamentosEnum.Debito:
                     taxa = 1.03;
@@ -58,7 +61,7 @@ namespace PostoGasolina.Utilidades
         private static double CalculaTaxaParcelas(int parcelas)
         {
             double taxaPorParcela = 1;
-            if (parcelas > 1 && parcelas <= 12)
+            if (parcelas >= 2 && parcelas <= 12)
             {
                 for (int i = 0; i < parcelas; i++)
                 {
@@ -66,7 +69,10 @@ namespace PostoGasolina.Utilidades
                 }
             }
             else
+            {
+                //Caso a parcela seja menor que 2 ou maior que 12 vai estourar uma exceção
                 throw new Exception("Número de parcelas inválido!");
+            }
 
             return taxaPorParcela;
         }

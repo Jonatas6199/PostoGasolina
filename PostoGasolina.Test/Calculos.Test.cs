@@ -66,5 +66,15 @@ namespace PostoGasolina.Test
 
             Assert.Equal(256.64, resultado);
         }
+
+        [Fact]
+        public void TestarGasolinaCreditoParceladoExcecao_Fact()
+        {
+            double litros = 20;
+            Gasolina gasolina = new Gasolina(PurezaEnum.Alta, "40W");
+            Assert.Throws<Exception>(()=>
+            Calculos.CalculaCombustivelPorFormaDePagamento
+                (PagamentosEnum.CreditoParcelado, litros, gasolina.PrecoLitro, 14));
+        }
     }
 }
