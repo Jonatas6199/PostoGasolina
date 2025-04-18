@@ -12,6 +12,7 @@ namespace PostoGasolina.Entidades
         public Combustivel Combustivel { get; set; }
         public double ValorCompra { get; set; }
         public PagamentosEnum FormaPagamento { get; set; }
+        public double Litros {  get; set; }
         public int Parcelas { get; set; } = 0;
     }
 }

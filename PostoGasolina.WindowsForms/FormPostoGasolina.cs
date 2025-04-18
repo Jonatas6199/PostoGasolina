@@ -1,17 +1,26 @@
+using PostoGasolina.Entidades;
 using PostoGasolina.Enumeradores;
 using PostoGasolina.Utilidades;
+using System.ComponentModel;
 
 namespace PostoGasolina.WindowsForms
 {
-    public partial class Form1 : Form
+    public partial class FormPostoGasolina : Form
     {
-        public Form1()
+        private static BindingList<Compra> compras;
+        public FormPostoGasolina()
         {
             InitializeComponent();
             CarregarFormasPagamento();
+            CarregarParcelas(); 
             CarregarCombustiveis();
             CarregarPureza();
             EsconderOuExibirParcelas(false);
+            compras = new BindingList<Compra>();
+            dgvExtrato.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvExtrato.DataSource = compras;
+            dgvExtrato.AllowUserToAddRows = false;
+            dgvExtrato.RowHeadersVisible = false;
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -31,19 +40,15 @@ namespace PostoGasolina.WindowsForms
             }
         }
 
-        private void lblParcelas_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnComprar_Click(object sender, EventArgs e)
         {
             CombustivelEnum combustivel = (CombustivelEnum)cbxCombustíveis.SelectedIndex;
             PurezaEnum pureza = (PurezaEnum)cbxNivelPureza.SelectedIndex;
             PagamentosEnum pagamentos = (PagamentosEnum)cbxFormaPagamento.SelectedIndex;
             double litros = (double)npdLitros.Value;
-            //TODO: Passar parcelas
-            OperacoesPosto.RealizarCompra(combustivel, pureza, pagamentos, litros);
+            int parcelas = cbxParcelas.SelectedIndex +1;
+            Compra compra = OperacoesPosto.RealizarCompra(combustivel, pureza, pagamentos, litros, parcelas);
+            compras.Add(compra);
         }
         private void EsconderOuExibirParcelas(bool exibir)
         {
@@ -54,6 +59,7 @@ namespace PostoGasolina.WindowsForms
             else
             {
                 cbxParcelas.Visible = lblParcelas.Visible = false;
+                cbxParcelas.SelectedIndex = -1;
             }
         }
         private void CarregarFormasPagamento()
@@ -68,6 +74,13 @@ namespace PostoGasolina.WindowsForms
         private void CarregarPureza()
         {
             cbxNivelPureza.DataSource = Enum.GetValues(typeof(PurezaEnum));
+        }
+        private void CarregarParcelas()
+        {
+            for (int i = 1; i <= 12; i++)
+            {
+                cbxParcelas.Items.Add(i.ToString());
+            }
         }
 
         private void cbxFormaPagamento_SelectedIndexChanged(object sender, EventArgs e)

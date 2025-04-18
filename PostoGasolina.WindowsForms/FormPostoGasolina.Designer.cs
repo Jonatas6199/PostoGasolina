@@ -1,6 +1,6 @@
 ﻿namespace PostoGasolina.WindowsForms
 {
-    partial class Form1
+    partial class FormPostoGasolina
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPostoGasolina));
             btnMinimizar = new Button();
             btnFechar = new Button();
             cbxCombustíveis = new ComboBox();
@@ -183,12 +183,11 @@
             lblParcelas.Size = new Size(93, 30);
             lblParcelas.TabIndex = 14;
             lblParcelas.Text = "Parcelas";
-            lblParcelas.Click += lblParcelas_Click;
             // 
             // btnComprar
             // 
             btnComprar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnComprar.Location = new Point(754, 534);
+            btnComprar.Location = new Point(754, 609);
             btnComprar.Name = "btnComprar";
             btnComprar.Size = new Size(103, 34);
             btnComprar.TabIndex = 15;
@@ -213,7 +212,7 @@
             dgvExtrato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvExtrato.Location = new Point(72, 375);
             dgvExtrato.Name = "dgvExtrato";
-            dgvExtrato.Size = new Size(370, 193);
+            dgvExtrato.Size = new Size(785, 205);
             dgvExtrato.TabIndex = 18;
             // 
             // cbxParcelas
@@ -225,7 +224,7 @@
             cbxParcelas.Size = new Size(63, 29);
             cbxParcelas.TabIndex = 19;
             // 
-            // Form1
+            // FormPostoGasolina
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -249,7 +248,7 @@
             Controls.Add(btnMinimizar);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "FormPostoGasolina";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)npdLitros).EndInit();

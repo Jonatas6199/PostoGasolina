@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostoGasolina", "PostoGasol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostoGasolina.Test", "PostoGasolina.Test\PostoGasolina.Test.csproj", "{7EB0DFA2-8864-4A38-A567-0D469AECC8EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostoGasolina.WindowsForms", "PostoGasolina.WindowsForms\PostoGasolina.WindowsForms.csproj", "{352D9E6A-6DCF-47BA-8E62-97FC33D6FD91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostoGasolina.WindowsForms", "PostoGasolina.WindowsForms\PostoGasolina.WindowsForms.csproj", "{352D9E6A-6DCF-47BA-8E62-97FC33D6FD91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

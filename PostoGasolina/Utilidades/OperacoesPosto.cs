@@ -21,7 +21,7 @@ namespace PostoGasolina.Utilidades
                     break;
 
                 case CombustivelEnum.Gasolina:
-                    compra.Combustivel = new Gasolina(pureza, "alta");
+                    compra.Combustivel = new Gasolina(pureza);
                     break;
 
                 case CombustivelEnum.Diesel:
@@ -29,11 +29,14 @@ namespace PostoGasolina.Utilidades
                     break;
 
             }
+           
             compra.FormaPagamento = formaPagamento;
             compra.Parcelas = parcelas; 
+            compra.Litros = litros;
 
             compra.ValorCompra = 
-                Calculos.CalculaCombustivelPorFormaDePagamento(formaPagamento, litros, compra.Combustivel.PrecoLitro, parcelas);
+                Calculos.CalculaCombustivelPorFormaDePagamento
+                (formaPagamento, litros, compra.Combustivel.PrecoLitro, parcelas);
 
             return compra;
         }

@@ -15,7 +15,7 @@ namespace PostoGasolina.Test
         public void TestarPrecoGasolina_True_Fact()
         {
             double litros = 20;
-            Gasolina gasolina = new Gasolina(PurezaEnum.Alta, "40W");
+            Gasolina gasolina = new Gasolina(PurezaEnum.Alta);
             double resultado = gasolina.CalculoPrecoGasolina(litros);
             Assert.Equal(140, resultado);
         }
@@ -36,7 +36,6 @@ namespace PostoGasolina.Test
         {
             double litros = 20;
             Diesel diesel = new Diesel(PurezaEnum.Alta);
-            Console.WriteLine(diesel.Viscosidade);
             double resultado =
                 Calculos.CalculaCombustivelBasico(litros, diesel.PrecoLitro);
 
@@ -47,7 +46,7 @@ namespace PostoGasolina.Test
         public void TestarGasolinaCreditoAVista_True_Fact()
         {
             double litros = 20;
-            Gasolina gasolina = new Gasolina(PurezaEnum.Alta, "40W");
+            Gasolina gasolina = new Gasolina(PurezaEnum.Alta);
             double resultado = 
                 Calculos.CalculaCombustivelPorFormaDePagamento
                 (PagamentosEnum.CreditoAVista,litros, gasolina.PrecoLitro);
@@ -59,7 +58,7 @@ namespace PostoGasolina.Test
         public void TestarGasolinaCreditoParcelado_True_Fact()
         {
             double litros = 20;
-            Gasolina gasolina = new Gasolina(PurezaEnum.Alta, "40W");
+            Gasolina gasolina = new Gasolina(PurezaEnum.Alta);
             double resultado =
                 Calculos.CalculaCombustivelPorFormaDePagamento
                 (PagamentosEnum.CreditoParcelado, litros, gasolina.PrecoLitro,5);
@@ -71,7 +70,7 @@ namespace PostoGasolina.Test
         public void TestarGasolinaCreditoParceladoExcecao_Fact()
         {
             double litros = 20;
-            Gasolina gasolina = new Gasolina(PurezaEnum.Alta, "40W");
+            Gasolina gasolina = new Gasolina(PurezaEnum.Alta);
             Assert.Throws<Exception>(()=>
             Calculos.CalculaCombustivelPorFormaDePagamento
                 (PagamentosEnum.CreditoParcelado, litros, gasolina.PrecoLitro, 14));

@@ -14,6 +14,10 @@ namespace PostoGasolina.Entidades
     {
         public double PrecoLitro { get; set; }
         public PurezaEnum Pureza { get; set; }
-        public string Viscosidade { get; set; }
+
+        public override string ToString()
+        {
+            return this.GetType().Name;
+        }
     }
 }

@@ -10,10 +10,9 @@ namespace PostoGasolina.Entidades
 {
     public class Gasolina : Combustivel
     {
-        public Gasolina(PurezaEnum pureza, string viscosidade) 
+        public Gasolina(PurezaEnum pureza) 
         {
             Pureza = pureza;
-            Viscosidade = viscosidade;
 
             switch (Pureza)
             {
